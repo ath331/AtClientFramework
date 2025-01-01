@@ -1,0 +1,84 @@
+syntax = "proto3";
+package Protocol;
+
+
+option csharp_namespace = "Protocol";
+
+
+import "Enum.proto";
+import "Struct.proto";
+
+
+// path = Login
+message C_Login
+{
+	string id = 1;
+	int32 pw = 2;
+}
+
+// path = Login
+message S_Login
+{
+	bool success = 1;
+	//repeated ObjectInfo players = 2;
+}
+
+// path = Game
+message C_EnterGame
+{
+	uint64 playerIndex = 1;
+}
+
+// path = Game
+message S_EnterGame
+{
+	bool success = 1;
+	ObjectInfo player = 2;
+}
+
+// path = Game
+message C_LeaveGame
+{
+}
+
+// path = Game
+message S_LeaveGame
+{
+}
+
+// path = Actor
+message C_Move
+{
+	PosInfo info = 1;
+}
+
+// path = Actor
+message S_Move
+{
+	PosInfo info = 1;
+}
+
+// path = Spawn
+message S_Spawn
+{
+	repeated ObjectInfo players = 1;
+}
+
+// path = Spawn
+message S_DeSpawn
+{
+	repeated uint64 ids = 1;
+}
+
+// path = Chat
+message C_Chat
+{
+	string msg = 1;
+}
+
+// path = Chat
+message S_Chat
+{
+	uint64 playerId = 1;
+	string msg = 2;
+}

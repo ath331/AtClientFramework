@@ -1,0 +1,45 @@
+syntax = "proto3";
+package Protocol;
+
+
+enum EObjectType
+{
+	OBJECT_TYPE_NONE = 0;
+	OBJECT_TYPE_ACTOR = 1;
+	OBJECT_TYPE_PROJECTILE = 2;
+	OBJECT_TYPE_ENV = 3;
+}
+
+enum EActorType
+{
+	None = 0;
+	Player = 1;
+	Monster = 2;
+	Npc = 3;
+}
+
+enum EBagType
+{
+	BagTypeNone = 0;
+	Equipment = 1;
+	Etc = 2;
+	Useable = 3;
+	BagTypeMax = 4;
+}
+
+enum EPlayerType
+{
+	PLAYER_TYPE_NONE = 0;
+	PLAYER_TYPE_KNIGHT = 1;
+	PLAYER_TYPE_MAGE = 2;
+	PLAYER_TYPE_ARCHER = 3;
+}
+
+enum EMoveState
+{
+	MOVE_STATE_NONE = 0;
+	MOVE_STATE_IDLE = 1;
+	MOVE_STATE_RUN  = 2;
+	MOVE_STATE_JUMP = 3;
+	MOVE_STATE_SKILL = 4;
+}
